@@ -13,7 +13,7 @@ function SimpleMap({coords}){
 
     // const MyCustomMarker = () => <span className="material-icons">place</span>;
     //add link to image that pulls in coords in a link to external google maps 
-    const MyCustomMarker = () => <a href={`https://www.google.com/maps/search/?api=1&query=${coords[0]}%2C${coords[1]}`} target="_blank" rel="noreferrer noopener"><img src={marker} className="h-[25px] w-[25px]"/></a>
+    const MyCustomMarker = () => <a href={`https://www.google.com/maps/search/?api=1&query=1836+W+25th+St%2CCleveland%2COH%2C44113-3142`} target="_blank" rel="noreferrer noopener"><img src={marker} className="h-[25px] w-[25px]"/></a>
     
   //   useEffect(() => {
   //      setCoordinates({coords});
