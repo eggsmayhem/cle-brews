@@ -1,0 +1,2 @@
+# google-map-react
+This library's behavior is a bit tricky when it comes to the rendering lifecycle, such that I had to disable Stict Mode in development. Rendering maps is a quirky process I would like to learn more about. 
