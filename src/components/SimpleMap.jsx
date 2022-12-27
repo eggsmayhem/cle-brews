@@ -27,7 +27,8 @@ function SimpleMap({coords}){
               // defaultZoom={defaultProps.zoom}
               // defaultCenter={defaultProps.center}
               zoom={defaultProps.zoom}
-              center={defaultProps.center}
+              center={coords ? {lat: coords[0], lng: coords[1]} : defaultProps.center}
+              // center={defaultProps.center}
           >
               <MyCustomMarker
                   lat={coords ? coords[0] : defaultProps.center[0]}

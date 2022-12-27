@@ -6,23 +6,24 @@ import {useEffect, useState} from 'react';
 import axios from "axios";
 
 export default function Overview() {
-    const [breweries, setBreweries] = useState([]);
-    const [large, setLarge] = useState({});
+    
+    const defaultBrewery = {
+        data: {
+            _id: "63a604387c8ae886f07a5ee2",
+            city: "Cleveland",
+            coordinates: [41.4861772, -81.7051638],
+            name: "Bad Tom Smith Brewing",
+            phone_number: "null",
+            postal_code: "44113-3142",
+            state: "Ohio",
+            street: "1836 W 25th St",
+            type: "brewpub",
+            url: "null",
+        }
+    }
 
-         const defaultBrewery = {
-                data: {
-                    _id: "63a604387c8ae886f07a5ee2",
-                    city: "Cleveland",
-                    coordinates: [ -81.7051638, 41.4861772 ],
-                    name: "Bad Tom Smith Brewing",
-                    phone_number: "null",
-                    postal_code: "44113-3142",
-                    state: "Ohio",
-                    street: "1836 W 25th St",
-                    type: "brewpub",
-                    url: "null",
-                }
-            }
+    const [breweries, setBreweries] = useState([]);
+    const [large, setLarge] = useState(defaultBrewery.data);
 
     useEffect(() => {
         const fetchBreweries = async () => {
