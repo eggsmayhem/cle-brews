@@ -17,7 +17,7 @@ export default function LargeDisplay({brewery}) {
     // if (Object.keys(brewery).length === 0) return 'Select Brewery.';
 
     return (
-        <div className='bg-slate-50 flex p-4 m-4 lg:w-[500px] h-[350px] justify-around items-center shadow-md lg:mt-[35px] fixed lg:left-[30px]'>
+        <div className='bg-slate-50 flex p-4 m-4 lg:w-[500px] h-[350px] justify-around items-center shadow-md top-[0px] lg:top-[90px] lg:mt-[35px] fixed lg:left-[30px]'>
              <div className='flex flex-col'>
                 <h3><strong>{displayName}</strong></h3>
                 <div>{displayType}</div>

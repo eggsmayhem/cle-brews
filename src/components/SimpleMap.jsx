@@ -25,11 +25,11 @@ function SimpleMap({coords}){
               // defaultZoom={defaultProps.zoom}
               // defaultCenter={defaultProps.center}
               zoom={defaultProps.zoom}
-              center={defaultProps.center}
+              center={coords ? {lat: coords[0], lng: coords[1]} : defaultProps.center}
           >
               <MyCustomMarker
-                  lat={defaultProps.center[0]}
-                  lng={defaultProps.center[1]}
+                  lat={coords ? coords[0] : defaultProps.center[0]}
+                  lng={coords ? coords[1] : defaultProps.center[1]}
               />
           </GoogleMapReact>
         </div>
