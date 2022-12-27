@@ -1,7 +1,7 @@
 import React,{useState , useEffect} from 'react';
 import GoogleMapReact from 'google-map-react';
 
-function SimpleMap(){
+function SimpleMap({coords}){
   const defaultProps = {
     center: {
       lat: 41.50030645,
@@ -21,7 +21,7 @@ function SimpleMap(){
       <div className="w-[300px] h-[340px]">
           <GoogleMapReact
               yesIWantToUseGoogleMapApiInternals
-              bootstrapURLKeys={{key: process.env.GOOGLE_API_KEY}}
+              bootstrapURLKeys={{key: 'AIzaSyCypv7AfN84bnMefCZRnXQaGoe8E6aF6dk'}}
               // defaultZoom={defaultProps.zoom}
               // defaultCenter={defaultProps.center}
               zoom={defaultProps.zoom}
