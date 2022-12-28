@@ -23,7 +23,7 @@ function SimpleMap({coords}){
       <div className="w-[300px] h-[340px]">
           <GoogleMapReact
               yesIWantToUseGoogleMapApiInternals
-              bootstrapURLKeys={{key: 'AIzaSyCypv7AfN84bnMefCZRnXQaGoe8E6aF6dk'}}
+              bootstrapURLKeys={{key: 'yourkey'}}
               // defaultZoom={defaultProps.zoom}
               // defaultCenter={defaultProps.center}
               zoom={defaultProps.zoom}
