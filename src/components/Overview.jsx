@@ -27,7 +27,7 @@ export default function Overview() {
 
     useEffect(() => {
         const fetchBreweries = async () => {
-            const breweriesList = await axios.get('http://127.0.0.1:3001/breweries/overview');
+            const breweriesList = await axios.get('https://cleveland-brews-api.onrender.com/breweries/overview');
             const breweriesArray = breweriesList.data;
             console.log(breweriesList);
             setBreweries(breweriesArray);
