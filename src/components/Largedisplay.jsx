@@ -25,7 +25,7 @@ export default function LargeDisplay({brewery}) {
                 <div>{displayCity} {displayState}, {displayPostal_code}</div>
                 <div>{displayWebsite}</div>
             </div>
-            <SimpleMap coords={ brewery.coordinates }/>
+            <SimpleMap brewery={ brewery }/>
             {/* <SimpleMap coords={ brewery }/> */}
         </div>
     );
