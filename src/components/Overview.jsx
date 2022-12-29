@@ -24,10 +24,12 @@ export default function Overview() {
 
     const [breweries, setBreweries] = useState([]);
     const [large, setLarge] = useState(defaultBrewery.data);
+    const [money, setMoney] = useState("");
 
     useEffect(() => {
         const fetchBreweries = async () => {
-            const breweriesList = await axios.get('https://cleveland-brews-api.onrender.com/breweries/overview');
+            const breweriesList = await axios.get('http://127.0.0.1:3001/breweries/overview');
+            // const breweriesList = await axios.get('https://cleveland-brews-api.onrender.com/breweries/overview');
             const breweriesArray = breweriesList.data;
             console.log(breweriesList);
             setBreweries(breweriesArray);
@@ -52,7 +54,7 @@ export default function Overview() {
                 <LargeDisplay brewery={ large }/>
                 {breweries.map(brewery => {
                     return (
-                        <span key={brewery._id} onClick={ (e) => updateDisplay(e, brewery) }>
+                        <span key={brewery._id} onClick={ (e) => updateDisplay(e, brewery) } className="w-full px-0.5">
                             <Card brewery={brewery} />
                         </span>
                     )   

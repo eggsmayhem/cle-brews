@@ -31,7 +31,7 @@ function SimpleMap({brewery}){
       <div className="w-[300px] h-[340px]">
           <GoogleMapReact
               yesIWantToUseGoogleMapApiInternals
-              bootstrapURLKeys={{key: 'your key'}}
+              bootstrapURLKeys={{key: 'AIzaSyCypv7AfN84bnMefCZRnXQaGoe8E6aF6dk'}}
               // defaultZoom={defaultProps.zoom}
               // defaultCenter={defaultProps.center}
               zoom={defaultProps.zoom}
