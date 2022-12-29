@@ -26,8 +26,8 @@ export default function Wrapper() {
 
     useEffect(() => {
         const fetchBreweries = async () => {
-            // const breweriesList = await axios.get('http://127.0.0.1:3001/breweries/overview');
-            const breweriesList = await axios.get('https://cleveland-brews-api.onrender.com/breweries/overview');
+            const breweriesList = await axios.get('http://127.0.0.1:3001/breweries/overview');
+            // const breweriesList = await axios.get('https://cleveland-brews-api.onrender.com/breweries/overview');
             const breweriesArray = breweriesList.data;
             setBreweries(breweriesArray);
         }
@@ -40,9 +40,10 @@ export default function Wrapper() {
     }
 
     return (
-        <div className="flex flex-col items-center landscape:flex-row landscape:items-start lg:items-start lg:flex-row lg:justify-center">
+        <div className="flex flex-col items-center landscape:flex-start landscape:flex-row lg:items-start lg:flex-row lg:justify-center">
             <LargeDisplay brewery={ large }/>
-            <div className='bg-slate-200 flex w-full flex-col items-center gap-y-1 mt-[420px] lg:mt-6 lg:relative lg:overflow-y-scroll landscape:h-[400px] landscape:overflow-y-scroll lg:h-[700px] lg:top-[47px] lg:mt-0 landscape:mt-0'>
+            <div className='bg-slate-200 flex w-full flex-col items-center gap-y-1 mt-[420px] lg:top-[38px]
+            lg:relative lg:overflow-y-scroll landscape:h-screen landscape:overflow-y-scroll lg:h-screen lg:top-[47px] lg:mt-0 landscape:mt-8'>
                 <span className="font-bold text-center">Click brewery to view map details:</span>  
                 {breweries.map(brewery => {
                     return (
