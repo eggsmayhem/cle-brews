@@ -28,10 +28,10 @@ function SimpleMap({brewery}){
   //  }, [{coords}])
    
     return(
-      <div className="w-[300px] h-[340px] lg:w-[600px] lg:h-[680px]">
+      <div className="w-[300px] h-[340px] lg:w-[560px] lg:h-[680px]">
           <GoogleMapReact
               yesIWantToUseGoogleMapApiInternals
-              bootstrapURLKeys={{key: 'you key'}}
+              bootstrapURLKeys={{key: 'your key'}}
               // defaultZoom={defaultProps.zoom}
               // defaultCenter={defaultProps.center}
               zoom={defaultProps.zoom}

@@ -48,10 +48,10 @@ export default function Overview() {
     // const cards = breweries.map(brewery =>)
 
     return (
-        <div className="flex flex-col items-center lg:items-start lg:flex-row mt-4 lg:ml-[380px]">
+        <div className="flex flex-col items-center lg:items-start lg:flex-row lg:justify-center">
             <LargeDisplay brewery={ large }/>
-            <div className='bg-slate-200 flex w-[242px] flex-col items-center gap-y-1 mt-[420px] lg:mt-6 lg:relative lg:left-[100px] lg:w-full'>
-                <span className="font-bold">Click brewery to view map details:</span>  
+            <div className='bg-slate-200 flex w-full flex-col items-center gap-y-1 mt-[420px] lg:mt-6 lg:relative lg:overflow-y-scroll lg:h-[700px] lg:top-[70px] lg:mt-0'>
+                <span className="font-bold text-center">Click brewery to view map details:</span>  
                 {breweries.map(brewery => {
                     return (
                         <span key={brewery._id} onClick={ (e) => updateDisplay(e, brewery) } className="w-full px-0.5">
