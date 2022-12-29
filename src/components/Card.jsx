@@ -17,14 +17,14 @@ export default function Card({brewery}) {
 
     //set state here with on click function. Uplift state. 
     return (
-        <div className='bg-slate-50 p-4 flex flex-col gap-y-1.5'>
+        <div className='bg-slate-50 p-4 flex flex-col gap-y-1.5 lg:right-0 lg:items-center lg:text-center'>
             <h2><strong>{cardName ? cardName : 'No Name'}</strong></h2>
             <div className="bg-gray-200 text-gray-400 font-bold text-sm rounded w-max p-0.5">{cardType}</div>
             <div className="address">
                 <div>{cardStreet}</div>
                 <div>{cardCity}, {cardState}, {cardPostal_code}</div>
             </div>
-            {cardWebsite !== "null" && <a href={cardWebsite} target="_blank" rel="noreferrer noopener" onClick={event => event.stopPropagation()} className="text-blue-600">Website</a>}
+            {cardWebsite !== "null" && <a href={cardWebsite} target="_blank" rel="noreferrer noopener" onClick={event => event.stopPropagation()} className="text-blue-600 w-max">Website</a>}
         </div>
     );
 }
