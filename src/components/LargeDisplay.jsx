@@ -15,7 +15,7 @@ export default function LargeDisplay({brewery}) {
     } = brewery;
     
     return (
-        <div className='w-full mt-7 lg:mt-0 bg-slate-50 flex p-4 m-4 lg:w-[560px] lg:h-[700px] items-center gap-x-1.5 shadow-md top-[0px] lg:top-[70px] fixed lg:relative lg:flex-col-reverse lg:gap-y-5'>
+        <div className='w-full mt-7 lg:mt-0 bg-slate-50 flex p-4 m-4 lg:w-[560px] lg:h-[700px] items-center gap-x-1.5 shadow-md top-[0px] lg:top-[70px] fixed landscape:relative lg:relative lg:flex-col-reverse lg:gap-y-5'>
              <div className='flex flex-col w-2/4 gap-y-1.5 items-center text-center'>
                 <h3><strong>{displayName}</strong></h3>
                 <div className="bg-gray-200 text-gray-400 font-bold text-sm rounded w-max p-0.5">{displayType}</div>
