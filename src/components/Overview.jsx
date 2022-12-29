@@ -18,7 +18,7 @@ export default function Overview() {
             state: "Ohio",
             street: "1836 W 25th St",
             type: "brewpub",
-            url: null,
+            url: "",
         }
     }
 

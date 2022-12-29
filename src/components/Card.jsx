@@ -24,7 +24,7 @@ export default function Card({brewery}) {
                 <div>{cardStreet}</div>
                 <div>{cardCity}, {cardState}, {cardPostal_code}</div>
             </div>
-            {cardWebsite !== "null" && <a href={cardWebsite} target="_blank" rel="noreferrer noopener" onClick={event => event.stopPropagation()} className="text-blue-600 w-max">Website</a>}
+            {cardWebsite.length > 4 && <a href={cardWebsite} target="_blank" rel="noreferrer noopener" onClick={event => event.stopPropagation()} className="text-blue-600 w-max">Website</a>}
         </div>
     );
 }

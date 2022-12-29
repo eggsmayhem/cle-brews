@@ -1,7 +1,7 @@
 
 import * as React from 'react';
 import SimpleMap from './SimpleMap'
-import phone from "../assets/phone-receiver-sillhouette.png"
+import phone from "../assets/phone.png"
 
 export default function LargeDisplay({brewery}) {
     const {
@@ -26,8 +26,12 @@ export default function LargeDisplay({brewery}) {
                 <div className="bg-gray-200 text-gray-400 font-bold text-sm rounded w-max p-0.5">{displayType}</div>
                 <div>{displayStreet}</div>
                 <div>{displayCity} {displayState}, {displayPostal_code}</div>
-                {displayWebsite && <a href={displayWebsite} target="_blank" rel="noreferrer noopener" className="text-blue-600 w-max">Website</a>}
-                {displayNumber && <a href={`tel:${displayNumber}`}>{displayNumber.substring(0,3)+ "-" + displayNumber.substring(3,6)+ "-"+displayNumber.substring(6,10)}</a>}
+                {displayWebsite.length > 4 && <a href={displayWebsite} target="_blank" rel="noreferrer noopener" className="text-blue-600 w-max">Website</a>}
+                {displayNumber.length > 4 &&
+                    <span className="flex gap-x-1.5 items-center">
+                        <img src={phone} className="h-[16px]"/><div href={`tel:${displayNumber}`} className="text-s">{displayNumber.substring(0,3)+ "-" + displayNumber.substring(3,6)+ "-"+displayNumber.substring(6,10)}</div>
+                    </span> 
+                }
             </div>
             <SimpleMap brewery={ brewery }/>
             {/* <SimpleMap coords={ brewery }/> */}
