@@ -5,7 +5,7 @@ import LargeDisplay from "./LargeDisplay";
 import {useEffect, useState} from 'react';
 import axios from "axios";
 
-export default function Overview() {
+export default function Wrapper() {
     
     const defaultBrewery = {
         data: {
@@ -24,12 +24,11 @@ export default function Overview() {
 
     const [breweries, setBreweries] = useState([]);
     const [large, setLarge] = useState(defaultBrewery.data);
-    const [money, setMoney] = useState("");
 
     useEffect(() => {
         const fetchBreweries = async () => {
-            const breweriesList = await axios.get('http://127.0.0.1:3001/breweries/overview');
-            // const breweriesList = await axios.get('https://cleveland-brews-api.onrender.com/breweries/overview');
+            // const breweriesList = await axios.get('http://127.0.0.1:3001/breweries/overview');
+            const breweriesList = await axios.get('https://cleveland-brews-api.onrender.com/breweries/overview');
             const breweriesArray = breweriesList.data;
             console.log(breweriesList);
             setBreweries(breweriesArray);
@@ -45,12 +44,10 @@ export default function Overview() {
         console.log(large)
     }
 
-    // const cards = breweries.map(brewery =>)
-
     return (
         <div className="flex flex-col items-center lg:items-start lg:flex-row lg:justify-center">
             <LargeDisplay brewery={ large }/>
-            <div className='bg-slate-200 flex w-full flex-col items-center gap-y-1 mt-[420px] lg:mt-6 lg:relative lg:overflow-y-scroll lg:h-[700px] lg:top-[70px] lg:mt-0'>
+            <div className='bg-slate-200 flex w-full flex-col items-center gap-y-1 mt-[420px] lg:mt-6 lg:relative lg:overflow-y-scroll lg:h-[700px] lg:top-[47px] lg:mt-0'>
                 <span className="font-bold text-center">Click brewery to view map details:</span>  
                 {breweries.map(brewery => {
                     return (

@@ -7,7 +7,6 @@ export default function Card({brewery}) {
         type: cardType,
         street: cardStreet,
         city: cardCity,
-        coordinates: cardCoords,
         state: cardState,
         postal_code: cardPostal_code,
         url: cardWebsite
@@ -15,7 +14,6 @@ export default function Card({brewery}) {
     console.log(brewery);
     console.log(cardName);
 
-    //set state here with on click function. Uplift state. 
     return (
         <div className='bg-slate-50 hover:bg-slate-100 p-4 flex flex-col gap-y-1.5 lg:right-0 lg:items-center lg:text-center'>
             <h2><strong>{cardName ? cardName : 'No Name'}</strong></h2>
