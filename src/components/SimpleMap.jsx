@@ -18,7 +18,8 @@ function SimpleMap({brewery}){
 		state: mapState,
 		postal_code: mapPostal_code,
 	} = brewery;
-
+	
+	// eslint-disable-next-line
 	const MyCustomMarker = () => <a href={`https://www.google.com/maps/search/?api=1&query=${mapName}%2C${mapCity}%2C${mapState}%2C${mapPostal_code}`} target="_blank" rel="noreferrer noopener"><img src={marker} className="h-[25px] w-[25px]"/></a>
 		
 	return(
