@@ -6,7 +6,6 @@ import {useEffect, useState} from 'react';
 import axios from "axios";
 
 export default function Wrapper() {
-    
     const defaultBrewery = {
         data: {
             _id: "63a604387c8ae886f07a5ee2",
@@ -20,7 +19,7 @@ export default function Wrapper() {
             type: "brewpub",
             url: "",
         }
-    }
+    };
 
     const [breweries, setBreweries] = useState([]);
     const [large, setLarge] = useState(defaultBrewery.data);
@@ -30,9 +29,7 @@ export default function Wrapper() {
             // const breweriesList = await axios.get('http://127.0.0.1:3001/breweries/overview');
             const breweriesList = await axios.get('https://cleveland-brews-api.onrender.com/breweries/overview');
             const breweriesArray = breweriesList.data;
-            console.log(breweriesList);
             setBreweries(breweriesArray);
-            console.log(breweriesArray);
         }
         fetchBreweries();
     }, []);
@@ -40,8 +37,6 @@ export default function Wrapper() {
     const updateDisplay = (event, brewery) => {
         event.preventDefault();
         setLarge(brewery);
-        console.log(brewery);
-        console.log(large)
     }
 
     return (
@@ -54,7 +49,7 @@ export default function Wrapper() {
                         <span key={brewery._id} onClick={ (e) => updateDisplay(e, brewery) } className="w-full px-0.5">
                             <Card brewery={brewery} />
                         </span>
-                    )   
+                    );   
                 })} 
             </div>
         </div>

@@ -1,6 +1,6 @@
 import * as React from 'react';
-import SimpleMap from './SimpleMap'
-import phone from "../assets/phone.png"
+import SimpleMap from './SimpleMap';
+import phone from "../assets/phone.png";
 
 export default function LargeDisplay({brewery}) {
     const {

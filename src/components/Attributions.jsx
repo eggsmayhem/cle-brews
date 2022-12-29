@@ -6,7 +6,7 @@ function Attributions(){
             <a href="https://www.flaticon.com/free-icons/beer" title="beer icons">Beer icons created by Freepik - Flaticon</a>
             <a href="https://www.flaticon.com/free-icons/phone" title="phone icons">Phone icons created by Freepik - Flaticon</a>
         </div>
-    )
-};
+    );
+}
 
-export default Attributions;
+export default Attributions
