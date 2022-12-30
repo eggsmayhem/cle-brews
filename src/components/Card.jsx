@@ -20,6 +20,8 @@ export default function Card({brewery}) {
                 <div>{cardStreet}</div>
                 <div>{cardCity}, {cardState}, {cardPostal_code}</div>
             </div>
+            {/* I did the below null check by looking for more than 4 chars to include the case of null, "null", and empty string in one piece of logic */}
+            {/* stopPropogation on Website link prevents event bubbling, as the parent card is also clickable */}
             {cardWebsite.length > 4 && <a href={cardWebsite} target="_blank" rel="noreferrer noopener" onClick={event => event.stopPropagation()} className="text-blue-600 w-max">Website</a>}
         </div>
     );

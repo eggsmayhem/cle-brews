@@ -18,7 +18,9 @@ function SimpleMap({brewery}){
 		state: mapState,
 		postal_code: mapPostal_code,
 	} = brewery;
-	
+
+	// format for external Google link uses Brewery name for search rather than address as this enables Google to fill in details about the actual brewery. Image description linter disabled for marker icons as they do not require description for functionality 
+
 	// eslint-disable-next-line
 	const MyCustomMarker = () => <a href={`https://www.google.com/maps/search/?api=1&query=${mapName}%2C${mapCity}%2C${mapState}%2C${mapPostal_code}`} target="_blank" rel="noreferrer noopener"><img src={marker} className="h-[25px] w-[25px]"/></a>
 		

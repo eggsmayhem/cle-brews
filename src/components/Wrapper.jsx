@@ -6,6 +6,8 @@ import {useEffect, useState} from 'react';
 import axios from "axios";
 
 export default function Wrapper() {
+    //dummy date to help maintain presentability while the API data is loading, especially important in current API deploy with Render cold start times 
+
     const defaultBrewery = {
         data: {
             _id: "63a604387c8ae886f07a5ee2",
@@ -20,6 +22,8 @@ export default function Wrapper() {
             url: "",
         }
     };
+
+    //state to pull in all breweries from API, and to set current brewery for large display
 
     const [breweries, setBreweries] = useState([]);
     const [large, setLarge] = useState(defaultBrewery.data);
@@ -42,7 +46,7 @@ export default function Wrapper() {
     return (
         <div className="flex flex-col items-center landscape:flex-start landscape:flex-row lg:items-start lg:flex-row lg:justify-center">
             <LargeDisplay brewery={ large }/>
-            <div className='bg-slate-200 flex w-full flex-col items-center gap-y-1 mt-[420px] lg:top-[37px]
+            <div className='bg-slate-200 flex w-full flex-col items-center gap-y-1 mt-[420px] lg:top-[36px]
             lg:relative lg:overflow-y-scroll landscape:h-screen landscape:overflow-y-scroll lg:h-screen lg:top-[47px] lg:mt-0 landscape:mt-8'>
                 <span className="font-bold text-center">Click brewery to view map details:</span>  
                 {breweries.map(brewery => {

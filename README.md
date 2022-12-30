@@ -4,7 +4,7 @@
 ### Overview
 This is a SPA that displays a list of breweries in Cleveland, OH. Info includes address, brewery type, phone number, and a clickable website link. Each brewery can also be displayed on a map.
 
-### Libraries 
+### Libraries
 
 #### google-map-react
 
