@@ -1,7 +1,8 @@
 
 import * as React from 'react';
-import Card from "./Card";
+// import Card from "./Card";
 import LargeDisplay from "./LargeDisplay";
+import CardWrapper from './CardWrapper';
 import {useEffect, useState} from 'react';
 import axios from "axios";
 
@@ -24,9 +25,11 @@ export default function Wrapper() {
     };
 
     //state to pull in all breweries from API, and to set current brewery for large display
+    //loading state for spinner
 
     const [breweries, setBreweries] = useState([]);
     const [large, setLarge] = useState(defaultBrewery.data);
+    const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
         const fetchBreweries = async () => {
@@ -34,6 +37,7 @@ export default function Wrapper() {
             const breweriesList = await axios.get('https://cleveland-brews-api.onrender.com/breweries/overview');
             const breweriesArray = breweriesList.data;
             setBreweries(breweriesArray);
+            setIsLoading(false);
         }
         fetchBreweries();
     }, []);
@@ -48,14 +52,7 @@ export default function Wrapper() {
             <LargeDisplay brewery={ large }/>
             <div className='bg-slate-200 flex w-full flex-col items-center gap-y-1 mt-[420px] lg:top-[38px]
             lg:relative lg:overflow-y-scroll landscape:h-screen landscape:overflow-y-scroll lg:h-screen lg:mt-0 landscape:mt-8'>
-                <span className="font-bold text-center">Click brewery to view map details:</span>  
-                {breweries.map(brewery => {
-                    return (
-                        <span key={brewery._id} onClick={ (e) => updateDisplay(e, brewery) } className="w-full px-0.5">
-                            <Card brewery={brewery} />
-                        </span>
-                    );   
-                })} 
+                <CardWrapper updateDisplay={updateDisplay} breweries={breweries} isLoading={isLoading} />
             </div>
         </div>
     );
