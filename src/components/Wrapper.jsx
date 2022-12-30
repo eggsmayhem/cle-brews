@@ -46,7 +46,7 @@ export default function Wrapper() {
     return (
         <div className="flex flex-col items-center landscape:flex-start landscape:flex-row lg:items-start lg:flex-row lg:justify-center">
             <LargeDisplay brewery={ large }/>
-            <div className='bg-slate-200 flex w-full flex-col items-center gap-y-1 mt-[420px] lg:top-[36px]
+            <div className='bg-slate-200 flex w-full flex-col items-center gap-y-1 mt-[420px] lg:top-[35px]
             lg:relative lg:overflow-y-scroll landscape:h-screen landscape:overflow-y-scroll lg:h-screen lg:top-[47px] lg:mt-0 landscape:mt-8'>
                 <span className="font-bold text-center">Click brewery to view map details:</span>  
                 {breweries.map(brewery => {
